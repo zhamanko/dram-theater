@@ -1,0 +1,24 @@
+<script>
+import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
+
+export default {
+  name: 'App',
+  components: {
+    Header,
+    Footer
+  }
+};
+</script>
+
+<template>
+  <div class="flex flex-col min-h-screen">
+    <Header />
+    <RouterView class="flex-1" />
+    <Footer />
+  </div>
+</template>
+
+<style scoped>
+
+</style>
