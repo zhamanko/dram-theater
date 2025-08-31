@@ -96,7 +96,7 @@ export default {
     </div>
 
     <!-- Приєднуйтесь до нас у соцмережах: -->
-    <div class="text-center text-white bg-[url('./img/background/backgroud_social.jpg')] bg-cover bg-center bg-fixed">
+    <div class="text-center text-white bg-[url('/img/background/backgroud_social.jpg')] bg-cover bg-center bg-fixed">
       <div class="bg-black/65 p-10">
         <h2 class="text-2xl font-bold">Приєднуйтесь до нас</h2>
 
