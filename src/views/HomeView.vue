@@ -8,25 +8,7 @@ export default {
   components: { MainAfisha, NewsCard, AfishaCard },
   data() {
     return {
-      offsetY: 0,
-      _rafId: null,
-      _onScroll: null
     };
-  },
-  mounted() {
-    this._onScroll = () => {
-      if (this._rafId) return;
-      this._rafId = requestAnimationFrame(() => {
-        const y = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
-        this.offsetY = y * 0.5; // швидкість паралакса
-        this._rafId = null;
-      });
-    };
-    window.addEventListener('scroll', this._onScroll, { passive: true });
-  },
-  beforeUnmount() {
-    window.removeEventListener('scroll', this._onScroll);
-    if (this._rafId) cancelAnimationFrame(this._rafId);
   }
 };
 </script>
@@ -49,8 +31,8 @@ export default {
 
     <!-- Про театр -->
     <div
-      class="relative text-center p-10 text-white bg-[url('img/background/drama-theatre.jpg')] bg-cover bg-center bg-fixed">
-      <div class="bg-black/50 p-10 rounded-xl">
+      class="relative text-center text-white bg-[url('img/background/dram-theater.jpg')] bg-cover bg-center bg-fixed">
+      <div class="bg-black/60 py-20 px-4">
         <h2 class="text-2xl font-bold mb-5">Про театр</h2>
         <p>
           Історія Закарпатського обласного державного українського музично-драматичного театру – це насамперед славна
@@ -73,37 +55,10 @@ export default {
       </div>
     </div>
 
-    <!-- Приєднуйтесь до нас у соцмережах: -->
-    <div class="text-center p-10 text-white bg-[#f3f4f6]">
-      <h2 class="text-2xl font-bold">Приєднуйтесь до нас</h2>
-
-      <div class="mt-5">
-        <div class="flex flex-row items-center justify-center gap-8">
-          <div>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="size-14">
-              <path fill-rule="evenodd"
-                d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
-                clip-rule="evenodd" />
-            </svg>
-          </div>
-
-          <div>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="size-14">
-              <path fill-rule="evenodd"
-                d="M21.7 8.037a4.26 4.26 0 0 0-.789-1.964 2.84 2.84 0 0 0-1.984-.839c-2.767-.2-6.926-.2-6.926-.2s-4.157 0-6.928.2a2.836 2.836 0 0 0-1.983.839 4.225 4.225 0 0 0-.79 1.965 30.146 30.146 0 0 0-.2 3.206v1.5a30.12 30.12 0 0 0 .2 3.206c.094.712.364 1.39.784 1.972.604.536 1.38.837 2.187.848 1.583.151 6.731.2 6.731.2s4.161 0 6.928-.2a2.844 2.844 0 0 0 1.985-.84 4.27 4.27 0 0 0 .787-1.965 30.12 30.12 0 0 0 .2-3.206v-1.516a30.672 30.672 0 0 0-.202-3.206Zm-11.692 6.554v-5.62l5.4 2.819-5.4 2.801Z"
-                clip-rule="evenodd" />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Партнери -->
-    <div class="text-center bg-white p-10">
+    <div class="text-center bg-red-900 pt-5 pb-10">
 
-      <h2 class="text-2xl font-bold">Наші партнери</h2>
+      <h2 class="text-2xl font-bold text-white">Наші партнери</h2>
 
       <div class="mt-5 flex flex-row items-center justify-center gap-8">
         <img class="rounded-lg" src="/img/partners/dastor.jpg" alt="dastor" />
@@ -114,7 +69,7 @@ export default {
 
 
     <!-- Контакти -->
-    <div class="p-10 bg-[#f3f4f6]">
+    <div class="p-10 bg-white">
 
       <h2 class="text-2xl font-bold text-center">Звʼязатись з нами</h2>
 
@@ -137,6 +92,101 @@ export default {
           <button class="bg-red-800 w-full py-2 px-4 rounded-lg hover:bg-red-700 transition text-white mt-4"
             type="submit">Відправити</button>
         </form>
+      </div>
+    </div>
+
+    <!-- Приєднуйтесь до нас у соцмережах: -->
+    <div class="text-center text-white bg-[url('img/background/backgroud_info.jpg')] bg-cover bg-center bg-fixed">
+      <div class="bg-black/65 p-10">
+        <h2 class="text-2xl font-bold">Приєднуйтесь до нас</h2>
+
+        <div class="mt-5">
+          <div class="flex flex-row items-center justify-center gap-8">
+            <!-- Фейсбук -->
+            <div>
+              <a href="https://www.facebook.com/Uzhgorodmuzdramteatr/?locale=uk_UA"
+              class="active:scale-125 hover:scale-125 transition inline-block">
+                <svg fill="#ffffff" width="64px" height="64px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"
+                  stroke="#ffffff">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <title></title>
+                    <path
+                      d="M44,7H20A13,13,0,0,0,7,20V44A13,13,0,0,0,20,57H44A13,13,0,0,0,57,44V20A13,13,0,0,0,44,7ZM33,55V38a1,1,0,0,0-1-1H27V31h5a1,1,0,0,0,1-1V22a5,5,0,0,1,5-5h8v6H42a3,3,0,0,0-3,3v4a1,1,0,0,0,1,1h6v6H40a1,1,0,0,0-1,1V55ZM55,44A11,11,0,0,1,44,55H41V39h6a1,1,0,0,0,1-1V30a1,1,0,0,0-1-1H41V26a1,1,0,0,1,1-1h5a1,1,0,0,0,1-1V16a1,1,0,0,0-1-1H38a7,7,0,0,0-7,7v7H26a1,1,0,0,0-1,1v8a1,1,0,0,0,1,1h5V55H20A11,11,0,0,1,9,44V20A11,11,0,0,1,20,9H44A11,11,0,0,1,55,20Z">
+                    </path>
+                  </g>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Інстаграм -->
+            <div>
+              <a href="https://www.instagram.com/dramteatruzh/"
+              class="active:scale-125 hover:scale-125 transition inline-block">
+                <svg fill="#ffffff" width="64px" height="64px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"
+                  stroke="#ffffff">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <title></title>
+                    <path
+                      d="M44,57H20A13,13,0,0,1,7,44V20A13,13,0,0,1,20,7H44A13,13,0,0,1,57,20V44A13,13,0,0,1,44,57ZM20,9A11,11,0,0,0,9,20V44A11,11,0,0,0,20,55H44A11,11,0,0,0,55,44V20A11,11,0,0,0,44,9Z">
+                    </path>
+                    <path
+                      d="M32,43.67A11.67,11.67,0,1,1,43.67,32,11.68,11.68,0,0,1,32,43.67Zm0-21.33A9.67,9.67,0,1,0,41.67,32,9.68,9.68,0,0,0,32,22.33Z">
+                    </path>
+                    <path
+                      d="M44.5,21A3.5,3.5,0,1,1,48,17.5,3.5,3.5,0,0,1,44.5,21Zm0-5A1.5,1.5,0,1,0,46,17.5,1.5,1.5,0,0,0,44.5,16Z">
+                    </path>
+                  </g>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Тікток -->
+            <div>
+              <a href="https://www.tiktok.com/@dramteatruzh"
+              class="active:scale-125 hover:scale-125 transition inline-block">
+                <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  stroke="#ffffff">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8Z"
+                      stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path
+                      d="M10 12C8.34315 12 7 13.3431 7 15C7 16.6569 8.34315 18 10 18C11.6569 18 13 16.6569 13 15V6C13.3333 7 14.6 9 17 9"
+                      stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </g>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Ютуб -->
+            <div>
+              <a
+                href="https://www.youtube.com/@%D0%94%D1%80%D0%B0%D0%BC%D1%82%D0%B5%D0%B0%D1%82%D1%80%D0%A3%D0%B6%D0%B3%D0%BE%D1%80%D0%BE%D0%B4"
+                class="active:scale-125 hover:scale-125 transition inline-block">
+                <svg width="64px" height="64px" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  stroke="#ffffff">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M18.168 19.0028C20.4724 19.0867 22.41 17.29 22.5 14.9858V9.01982C22.41 6.71569 20.4724 4.91893 18.168 5.00282H6.832C4.52763 4.91893 2.58998 6.71569 2.5 9.01982V14.9858C2.58998 17.29 4.52763 19.0867 6.832 19.0028H18.168Z"
+                      stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M12.008 9.17784L15.169 11.3258C15.3738 11.4454 15.4997 11.6647 15.4997 11.9018C15.4997 12.139 15.3738 12.3583 15.169 12.4778L12.008 14.8278C11.408 15.2348 10.5 14.8878 10.5 14.2518V9.75184C10.5 9.11884 11.409 8.77084 12.008 9.17784Z"
+                      stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </g>
+                </svg>
+              </a>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
   </main>

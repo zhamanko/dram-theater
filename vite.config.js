@@ -11,7 +11,8 @@ export default defineConfig({
     vue(),
     vueDevTools(),
     tailwindcss(),
-  ],
+  ], 
+  base: '/dram-theater/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
