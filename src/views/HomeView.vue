@@ -25,13 +25,13 @@ export default {
       <h2 class="text-center font-bold p-2 text-2xl pb-5">Афіши</h2>
       <div class="flex flex-row items-center justify-center pb-8">
         <AfishaCard title="Кайдашева сімʼя" description="Класика української літератури оживає на сцені..."
-          date="25 липня" photo="src/assets/img/afisha/kajdasheva-simja.jpg" />
+          date="25 липня" photo="./img/afisha/kajdasheva-simja.jpg" />
       </div>
     </div>
 
     <!-- Про театр -->
     <div
-      class="relative text-center text-white bg-[url('img/background/dram-theater.jpg')] bg-cover bg-center bg-fixed">
+      class="relative text-center text-white bg-[url('/img/background/dram-theater.jpg')] bg-cover bg-center bg-fixed">
       <div class="bg-black/60 py-20 px-4">
         <h2 class="text-2xl font-bold mb-5">Про театр</h2>
         <p>
@@ -51,7 +51,7 @@ export default {
       <h2 class="text-center font-bold p-2 text-2xl pb-5">Останні новини</h2>
       <div class="flex flex-row items-center justify-center pb-8">
         <NewsCard title="Нова прем’єра вже зовсім близько!" description="Сьогодні в театрі відбулася технічна рада..."
-          photo="/img/news/pro-premjeru-tihe-vushko-3.jpg" date="Пн, 18 липня 2025" />
+          photo="./img/news/pro-premjeru-tihe-vushko-3.jpg" date="Пн, 18 липня 2025" />
       </div>
     </div>
 
@@ -96,7 +96,7 @@ export default {
     </div>
 
     <!-- Приєднуйтесь до нас у соцмережах: -->
-    <div class="text-center text-white bg-[url('img/background/backgroud_info.jpg')] bg-cover bg-center bg-fixed">
+    <div class="text-center text-white bg-[url('./img/background/backgroud_social.jpg')] bg-cover bg-center bg-fixed">
       <div class="bg-black/65 p-10">
         <h2 class="text-2xl font-bold">Приєднуйтесь до нас</h2>
 
