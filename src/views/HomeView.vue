@@ -3,9 +3,11 @@ import MainAfisha from '@/components/MainAfisha.vue';
 import NewsCard from '@/components/NewsCard.vue';
 import AfishaCard from '@/components/AfishaCard.vue';
 
+import ParallaxSection from '@/components/ParallaxSection.vue';
+
 export default {
   name: 'HomeView',
-  components: { MainAfisha, NewsCard, AfishaCard },
+  components: { MainAfisha, NewsCard, AfishaCard, ParallaxSection },
   data() {
     return {
     };
@@ -30,8 +32,7 @@ export default {
     </div>
 
     <!-- Про театр -->
-    <div
-      class="relative text-center text-white bg-[url('/img/background/dram-theater.jpg')] bg-cover bg-center bg-fixed">
+    <ParallaxSection image="./img/background/dram-theater.jpg" speed="0.3">
       <div class="bg-black/60 py-20 px-4">
         <h2 class="text-2xl font-bold mb-5">Про театр</h2>
         <p>
@@ -43,7 +44,7 @@ export default {
           Дізнатися більше
         </button>
       </div>
-    </div>
+    </ParallaxSection>
 
 
     <!-- Новини -->
