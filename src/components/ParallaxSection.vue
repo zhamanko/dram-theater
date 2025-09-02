@@ -1,62 +1,71 @@
+<script>
+export default {
+  props: {
+    image: { type: String, required: true },
+    speed: { type: Number, default: 0.35 }, // 0.2–0.5 — приємний діапазон
+  },
+  data() {
+    return {
+      y: 0,
+      ticking: false,
+      isMobile: false,
+    }
+  },
+  computed: {
+    bgStyle() {
+      return {
+        backgroundImage: `url(${this.image})`,
+        backgroundAttachment: 'scroll',
+        backgroundPosition: `center calc(50% + ${this.y}px)`,
+        willChange: 'background-position',
+        backgroundSize: this.isMobile ? '800px' : '100% 100vh',
+      }
+    },
+  },
+  methods: {
+    updateOffset() {
+      if (!this.$refs.el) return
+      const rect = this.$refs.el.getBoundingClientRect()
+      const vh = window.innerHeight || document.documentElement.clientHeight
+      const centerDelta = rect.top + rect.height / 2 - vh / 2
+      this.y = -centerDelta * this.speed
+    },
+    onScroll() {
+      if (this.ticking) return
+      this.ticking = true
+      requestAnimationFrame(() => {
+        this.updateOffset()
+        this.ticking = false
+      })
+    },
+    checkDevice() {
+      this.isMobile = window.innerWidth < 768
+    },
+    onResize() {
+      this.updateOffset()
+      this.checkDevice()
+    },
+  },
+  mounted() {
+    this.updateOffset()
+    this.checkDevice()
+    window.addEventListener('scroll', this.onScroll, { passive: true })
+    window.addEventListener('resize', this.onResize)
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.onScroll)
+    window.removeEventListener('resize', this.onResize)
+  },
+}
+</script>
+
 <template>
   <section
     ref="el"
     class="relative text-center text-white bg-cover bg-center"
     :style="bgStyle">
-    <div class="bg-black/0">
+    <div class="bg-black/60">
       <slot />
     </div>
   </section>
 </template>
-
-<script setup>
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
-
-const props = defineProps({
-  image: { type: String, required: true },
-  speed: { type: Number, default: 0.35 }, // 0.2–0.5 — приємний діапазон
-})
-
-const el = ref(null)
-const y = ref(0)
-let ticking = false
-
-function updateOffset() {
-  if (!el.value) return
-  const rect = el.value.getBoundingClientRect()
-  const vh = window.innerHeight || document.documentElement.clientHeight
-
-  // Зсуваємо фон залежно від того, де секція відносно центру в'юпорту
-  const centerDelta = rect.top + rect.height / 2 - vh / 2
-  y.value = -centerDelta * props.speed
-}
-
-function onScroll() {
-  if (ticking) return
-  ticking = true
-  requestAnimationFrame(() => {
-    updateOffset()
-    ticking = false
-  })
-}
-
-const bgStyle = computed(() => ({
-  backgroundImage: `url(${props.image})`,
-  backgroundSize: 'cover',
-  backgroundSize: '800px',
-  backgroundAttachment: 'scroll', // важливо: без bg-fixed
-  backgroundPosition: `center calc(50% + ${y.value}px)`,
-  willChange: 'background-position',
-}))
-
-onMounted(() => {
-  updateOffset()
-  window.addEventListener('scroll', onScroll, { passive: true })
-  window.addEventListener('resize', updateOffset)
-})
-
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', onScroll)
-  window.removeEventListener('resize', updateOffset)
-})
-</script>

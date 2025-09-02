@@ -33,7 +33,7 @@ export default {
 
     <!-- Про театр -->
     <ParallaxSection image="./img/background/dram-theater.jpg" speed="0.3">
-      <div class="bg-black/60 py-20 px-4">
+      <div class=" py-20 px-4">
         <h2 class="text-2xl font-bold mb-5">Про театр</h2>
         <p>
           Історія Закарпатського обласного державного українського музично-драматичного театру – це насамперед славна
@@ -97,8 +97,8 @@ export default {
     </div>
 
     <!-- Приєднуйтесь до нас у соцмережах: -->
-    <div class="text-center text-white bg-[url('/img/background/backgroud_social.jpg')] bg-cover bg-center bg-fixed">
-      <div class="bg-black/65 p-10">
+    <ParallaxSection image="./img/background/social.jpg" speed="0.2">
+      <div class="p-10">
         <h2 class="text-2xl font-bold">Приєднуйтесь до нас</h2>
 
         <div class="mt-5">
@@ -106,7 +106,7 @@ export default {
             <!-- Фейсбук -->
             <div>
               <a href="https://www.facebook.com/Uzhgorodmuzdramteatr/?locale=uk_UA"
-              class="active:scale-125 hover:scale-125 transition inline-block">
+                class="active:scale-125 hover:scale-125 transition inline-block">
                 <svg fill="#ffffff" width="64px" height="64px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"
                   stroke="#ffffff">
                   <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -124,7 +124,7 @@ export default {
             <!-- Інстаграм -->
             <div>
               <a href="https://www.instagram.com/dramteatruzh/"
-              class="active:scale-125 hover:scale-125 transition inline-block">
+                class="active:scale-125 hover:scale-125 transition inline-block">
                 <svg fill="#ffffff" width="64px" height="64px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"
                   stroke="#ffffff">
                   <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -148,7 +148,7 @@ export default {
             <!-- Тікток -->
             <div>
               <a href="https://www.tiktok.com/@dramteatruzh"
-              class="active:scale-125 hover:scale-125 transition inline-block">
+                class="active:scale-125 hover:scale-125 transition inline-block">
                 <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
                   stroke="#ffffff">
                   <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -167,8 +167,7 @@ export default {
 
             <!-- Ютуб -->
             <div>
-              <a
-                href="https://www.youtube.com/@%D0%94%D1%80%D0%B0%D0%BC%D1%82%D0%B5%D0%B0%D1%82%D1%80%D0%A3%D0%B6%D0%B3%D0%BE%D1%80%D0%BE%D0%B4"
+              <a href="https://www.youtube.com/@%D0%94%D1%80%D0%B0%D0%BC%D1%82%D0%B5%D0%B0%D1%82%D1%80%D0%A3%D0%B6%D0%B3%D0%BE%D1%80%D0%BE%D0%B4"
                 class="active:scale-125 hover:scale-125 transition inline-block">
                 <svg width="64px" height="64px" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"
                   stroke="#ffffff">
@@ -189,6 +188,6 @@ export default {
           </div>
         </div>
       </div>
-    </div>
+    </ParallaxSection>
   </main>
 </template>
