@@ -125,7 +125,7 @@ export default {
         <div
           class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4">
           <h2 class="text-3xl font-semibold">{{ item.title }}</h2>
-          <p class="text-sm">{{ item.description }}</p>
+          <p class="text-base">{{ item.description }}</p>
           <div class="flex justify-between items-center mt-4">
             <p class="text-sm">{{ item.date }}</p>
             <button

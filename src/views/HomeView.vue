@@ -10,8 +10,110 @@ export default {
   components: { MainAfisha, NewsCard, AfishaCard, ParallaxSection },
   data() {
     return {
-    };
-  }
+      afisha: [
+        { title: 'Кайдашева сімʼя', description: 'Класика української літератури оживає на сцені...', date: '25 липня', photo: './img/afisha/kajdasheva-simja.jpg' },
+        { title: 'Емігранти', description: '«Приречені» — це трагічна історія про жінок...', date: '27 липня', photo: './img/afisha/emigrantu.jpg' },
+        { title: 'Приречені', description: 'В основі – п’єса одного з найвідоміших польських письменників...', date: '30 липня', photo: './img/afisha/prirecheni-m.jpg' },
+
+       { title: 'Кайдашева сімʼя', description: 'Класика української літератури оживає на сцені...', date: '25 липня', photo: './img/afisha/kajdasheva-simja.jpg' },
+        { title: 'Емігранти', description: '«Приречені» — це трагічна історія про жінок...', date: '27 липня', photo: './img/afisha/emigrantu.jpg' },
+        { title: 'Приречені', description: 'В основі – п’єса одного з найвідоміших польських письменників...', date: '30 липня', photo: './img/afisha/prirecheni-m.jpg' },
+
+      ],
+      currentIndex: 0,
+      progress: 0,
+      intervalId: null,
+      touchStartX: 0,
+      touchEndX: 0,
+      visibleCount: 1, // Змінив на 1 для більш передбачуваної поведінки
+    }
+  },
+  methods: {
+    startSlider() {
+      // Спочатку очищаємо будь-який існуючий інтервал
+      if (this.intervalId) {
+        clearInterval(this.intervalId);
+      }
+
+      let step = 0;
+      this.intervalId = setInterval(() => {
+        step += 2;
+        if (step >= 100) {
+          step = 0;
+          this.nextSlide();
+        }
+        this.progress = step;
+      }, 100);
+    },
+
+    resetProgress() {
+      this.progress = 0;
+    },
+
+    nextSlide() {
+      this.clearTimer(); // Очищаємо таймер
+      this.currentIndex = (this.currentIndex + 1) % this.afisha.length;
+      this.resetProgress();
+      this.startSlider(); // Перезапускаємо таймер
+    },
+
+    prevSlide() {
+      this.clearTimer(); // Очищаємо таймер
+      this.currentIndex = (this.currentIndex - 1 + this.afisha.length) % this.afisha.length;
+      this.resetProgress();
+      this.startSlider(); // Перезапускаємо таймер
+    },
+
+    clearTimer() {
+      if (this.intervalId) {
+        clearInterval(this.intervalId);
+        this.intervalId = null;
+      }
+    },
+
+    // Оновлені методи для свайпу
+    onTouchStart(e) {
+      this.touchStartX = e.changedTouches[0].screenX;
+      this.clearTimer(); // Зупиняємо таймер при початку свайпу
+    },
+
+    onTouchEnd(e) {
+      this.touchEndX = e.changedTouches[0].screenX;
+      this.handleSwipe();
+    },
+
+    onMouseDown(e) {
+      this.touchStartX = e.screenX;
+      this.clearTimer(); // Зупиняємо таймер при початку перетягування мишею
+    },
+
+    onMouseUp(e) {
+      this.touchEndX = e.screenX;
+      this.handleSwipe();
+    },
+
+    handleSwipe() {
+      const diff = this.touchEndX - this.touchStartX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+          this.prevSlide();
+        } else {
+          this.nextSlide();
+        }
+      } else {
+        // Якщо свайп був замалий, просто перезапускаємо таймер
+        this.startSlider();
+      }
+    },
+  },
+
+  mounted() {
+    this.startSlider();
+  },
+
+  beforeUnmount() {
+    this.clearTimer();
+  },
 };
 </script>
 
@@ -23,11 +125,41 @@ export default {
     </div>
 
     <!-- Афіши -->
-    <div id="container-afisha" class="bg-white pt-3">
-      <h2 class="text-center font-bold p-2 text-2xl pb-5">Афіши</h2>
-      <div class="flex flex-row items-center justify-center pb-8">
-        <AfishaCard title="Кайдашева сімʼя" description="Класика української літератури оживає на сцені..."
-          date="25 липня" photo="./img/afisha/kajdasheva-simja.jpg" />
+    <div id="container-afisha" class="bg-white pt-5 pb-2">
+      <h2 class="text-center font-bold text-2xl">Афіши</h2>
+
+      <!-- Слайдер -->
+      <div class="relative w-full pt-5 pb-8 max-w-4xl mx-auto overflow-hidden" @touchstart="onTouchStart"
+        @touchend="onTouchEnd" @mousedown="onMouseDown" @mouseup="onMouseUp">
+        <div class="flex transition-transform duration-700 ease-in-out"
+          :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
+          <div v-for="(item, i) in afisha" :key="i" class="flex-shrink-0 w-full px-4">
+            <AfishaCard v-bind="item" :class="i === currentIndex ? 'scale-100' : 'scale-90 opacity-80'"
+              class="transition-all duration-500 mx-auto" />
+          </div>
+        </div>
+
+        <!-- Кнопки -->
+        <button
+          class="absolute top-1/2 left-0 -translate-y-1/2 w-12 h-12 bg-black/30 text-white flex items-center justify-center rounded-full ml-2"
+          @click="prevSlide">
+          ‹
+        </button>
+        <button
+          class="absolute top-1/2 right-0 -translate-y-1/2 w-12 h-12 bg-black/30 text-white flex items-center justify-center rounded-full mr-2"
+          @click="nextSlide">
+          ›
+        </button>
+
+        <!-- Смуги прогресу (карусель) -->
+        <div class="absolute bottom-0 left-0 w-full flex justify-center items-center gap-2 px-2 mb-2">
+          <div v-for="(item, i) in afisha" :key="i"
+            class="transition-all duration-500 rounded bg-gray-300 overflow-hidden"
+            :class="i === currentIndex ? 'h-2 w-16' : 'h-1 w-6'">
+            <div class="h-full bg-red-500 transition-all duration-100"
+              :style="{ width: i < currentIndex ? '100%' : i === currentIndex ? progress + '%' : '0%' }"></div>
+          </div>
+        </div>
       </div>
     </div>
 

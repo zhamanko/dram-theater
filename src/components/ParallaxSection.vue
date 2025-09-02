@@ -18,7 +18,7 @@ export default {
         backgroundAttachment: 'scroll',
         backgroundPosition: `center calc(50% + ${this.y}px)`,
         willChange: 'background-position',
-        backgroundSize: this.isMobile ? '800px' : '100% 100vh',
+        backgroundSize: this.isMobile ? '1100px' : '100% 100vh',
       }
     },
   },
