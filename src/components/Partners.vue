@@ -2,7 +2,7 @@
   <div class="bg-red-900 py-10 text-center">
     <h2 class="text-2xl font-bold text-white mb-5">Наші партнери</h2>
 
-    <Swiper :centeredSlides="true" :spaceBetween="30" :loop="true" :speed="3000" :autoplay="{
+    <Swiper :slidesPerView="5" :centeredSlides="true" :spaceBetween="30" :loop="true" :speed="3000" :autoplay="{
       delay: 1,
       disableOnInteraction: false,
     }" :breakpoints="{
@@ -62,6 +62,11 @@ export default {
 <style scoped>
 .partners-swiper {
   width: 100%;
-  padding-left: 80px;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 </style>

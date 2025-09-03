@@ -1,14 +1,15 @@
 <script>
 import MainAfisha from '@/components/MainAfisha.vue';
-import NewsCard from '@/components/NewsCard.vue';
 import AfishaCard from '@/components/AfishaCard.vue';
 import Partners from '@/components/Partners.vue';
+import News from '@/components/News.vue';
 
 import ParallaxSection from '@/components/ParallaxSection.vue';
 
+
 export default {
   name: 'HomeView',
-  components: { MainAfisha, NewsCard, AfishaCard, ParallaxSection, Partners },
+  components: { MainAfisha, AfishaCard, News, ParallaxSection, Partners },
   data() {
     return {
       afisha: [
@@ -186,13 +187,7 @@ export default {
 
 
     <!-- Новини -->
-    <div id="container-news" class="bg-white pt-3">
-      <h2 class="text-center font-bold p-2 text-2xl pb-5">Останні новини</h2>
-      <div class="flex flex-row items-center justify-center pb-8">
-        <NewsCard title="Нова прем’єра вже зовсім близько!" description="Сьогодні в театрі відбулася технічна рада..."
-          photo="./img/news/pro-premjeru-tihe-vushko-3.jpg" date="Пн, 18 липня 2025" />
-      </div>
-    </div>
+    <News />
 
     <!-- Партнери -->
     <Partners />
@@ -226,7 +221,7 @@ export default {
     </div>
 
     <!-- Приєднуйтесь до нас у соцмережах: -->
-    <ParallaxSection image="./img/background/social.jpg" speed="0.2">
+    <ParallaxSection image="./img/background/social.jpg" speed="0.2" opacity="60">
       <div class="p-10">
         <h2 class="text-2xl font-bold">Приєднуйтесь до нас</h2>
 

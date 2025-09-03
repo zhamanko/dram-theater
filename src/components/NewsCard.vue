@@ -11,16 +11,16 @@ export default {
 </script>
 
 <template>
-    <div id="item" class="w-70 bg-white shadow-lg rounded-xl hover:scale-105 duration-300">
+    <div id="item" class="min-w-70 max-w-70 h-130 bg-white shadow-lg rounded-xl duration-300">
         <img 
-            class="w-full h-50 object-cover rounded-t-xl"
+            class="w-full h-70 object-cover rounded-t-xl"
             :src="photo" 
             :alt="title"
         >
 
         <div class="p-3 flex flex-col gap-2">
             <div>
-                <h3 class="font-bold mb-3">{{ title }}</h3>
+                <h3 class="font-bold text-lg text-center mb-3">{{ title }}</h3>
                 <p class="text-sm">{{ description }}</p>
             </div>
             <div>
