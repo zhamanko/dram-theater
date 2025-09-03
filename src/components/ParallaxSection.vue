@@ -3,6 +3,7 @@ export default {
   props: {
     image: { type: String, required: true },
     speed: { type: Number, default: 0.35 }, // 0.2–0.5 — приємний діапазон
+    opacity: { type: Number, default: 80 },
   },
   data() {
     return {
@@ -64,7 +65,7 @@ export default {
     ref="el"
     class="relative text-center text-white bg-cover bg-center"
     :style="bgStyle">
-    <div class="bg-black/60">
+    <div :style="{ backgroundColor: `rgba(0,0,0,${opacity/100})` }">
       <slot />
     </div>
   </section>

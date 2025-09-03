@@ -2,12 +2,13 @@
 import MainAfisha from '@/components/MainAfisha.vue';
 import NewsCard from '@/components/NewsCard.vue';
 import AfishaCard from '@/components/AfishaCard.vue';
+import Partners from '@/components/Partners.vue';
 
 import ParallaxSection from '@/components/ParallaxSection.vue';
 
 export default {
   name: 'HomeView',
-  components: { MainAfisha, NewsCard, AfishaCard, ParallaxSection },
+  components: { MainAfisha, NewsCard, AfishaCard, ParallaxSection, Partners },
   data() {
     return {
       afisha: [
@@ -25,7 +26,7 @@ export default {
       intervalId: null,
       touchStartX: 0,
       touchEndX: 0,
-      visibleCount: 1, // Змінив на 1 для більш передбачуваної поведінки
+      visibleCount: 1,
     }
   },
   methods: {
@@ -170,9 +171,9 @@ export default {
 
     <!-- Про театр -->
     <ParallaxSection image="./img/background/dram-theater.jpg" speed="0.3">
-      <div class=" py-20 px-4">
+      <div class="py-20 px-10">
         <h2 class="text-2xl font-bold mb-5">Про театр</h2>
-        <p>
+        <p class="text-justify">
           Історія Закарпатського обласного державного українського музично-драматичного театру – це насамперед славна
           сторінка становлення нації, сторінка самопожертви та відданості ідеї творення українського театру на
           Закарпатті.
@@ -194,16 +195,7 @@ export default {
     </div>
 
     <!-- Партнери -->
-    <div class="text-center bg-red-900 pt-5 pb-10">
-
-      <h2 class="text-2xl font-bold text-white">Наші партнери</h2>
-
-      <div class="mt-5 flex flex-row items-center justify-center gap-8">
-        <img class="rounded-lg" src="/img/partners/dastor.jpg" alt="dastor" />
-        <img class="rounded-lg" src="/img/partners/nemiroff.jpg" alt="nemiroff" />
-      </div>
-
-    </div>
+    <Partners />
 
 
     <!-- Контакти -->
