@@ -1,5 +1,5 @@
 <script>
-import NewsCard from '@/components/NewsCard.vue';
+import NewsCard from '@/components/home/NewsCard.vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/autoplay';
@@ -64,17 +64,17 @@ export default {
 
 <template>
     <div class="bg-white pt-3">
-        <h2 class="text-center font-bold p-2 text-2xl pb-5">Останні новини</h2>
-        <Swiper :loop="true" :slidesPerView="3" :centeredSlides="true" :spaceBetween="30" :pagination="{
+        <h2 class="text-center font-bold p-2 text-2xl">Останні новини</h2>
+        <Swiper :loop="true" :slidesPerView="3" :centeredSlides="true" :pagination="{
             clickable: true,
         }" :modules="modules" :navigation="false" :breakpoints="{
             320: { slidesPerView: 1 },
-            480: { slidesPerView: 2 },
+            670: { slidesPerView: 2 },
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
             1280: { slidesPerView: 3 },
         }" class="news-swiper">
-            <SwiperSlide v-for="(item, index) in news" :key="index" class="py-10">
+            <SwiperSlide v-for="(item, index) in news" :key="index" class="pt-3 pb-10">
                 <div class="slide-inner">
                     <NewsCard :title="item.title" :description="item.description" :photo="item.photo" :date="item.date" />
                 </div>

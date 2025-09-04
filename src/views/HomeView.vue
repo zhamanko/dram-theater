@@ -1,10 +1,10 @@
 <script>
-import MainAfisha from '@/components/MainAfisha.vue';
-import AfishaCard from '@/components/AfishaCard.vue';
-import Partners from '@/components/Partners.vue';
-import News from '@/components/News.vue';
+import MainAfisha from '@/components/home/MainAfisha.vue';
+import AfishaCard from '@/components/home/AfishaCard.vue';
+import Partners from '@/components/home/Partners.vue';
+import News from '@/components/home/News.vue';
 
-import ParallaxSection from '@/components/ParallaxSection.vue';
+import ParallaxSection from '@/components/home/ParallaxSection.vue';
 
 
 export default {
