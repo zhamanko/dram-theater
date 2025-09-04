@@ -65,7 +65,7 @@ export default {
 <template>
     <div class="bg-white pt-3">
         <h2 class="text-center font-bold p-2 text-2xl">Останні новини</h2>
-        <Swiper :loop="true" :slidesPerView="3" :centeredSlides="true" :pagination="{
+        <Swiper :loop="true" :slidesPerView="3" :centeredSlides="true" :speed="800" :pagination="{
             clickable: true,
         }" :modules="modules" :navigation="false" :breakpoints="{
             320: { slidesPerView: 1 },

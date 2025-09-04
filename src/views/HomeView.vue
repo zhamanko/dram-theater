@@ -3,13 +3,14 @@ import MainAfisha from '@/components/home/MainAfisha.vue';
 import AfishaCard from '@/components/home/AfishaCard.vue';
 import Partners from '@/components/home/Partners.vue';
 import News from '@/components/home/News.vue';
+import Afishas from '@/components/home/Afishas.vue';
 
 import ParallaxSection from '@/components/home/ParallaxSection.vue';
 
 
 export default {
   name: 'HomeView',
-  components: { MainAfisha, AfishaCard, News, ParallaxSection, Partners },
+  components: { MainAfisha, Afishas, AfishaCard, News, ParallaxSection, Partners },
   data() {
     return {
       afisha: [
@@ -127,10 +128,10 @@ export default {
     </div>
 
     <!-- Афіши -->
-    <div id="container-afisha" class="bg-white pt-5 pb-2">
+     <Afishas />
+    <!-- <div id="container-afisha" class="bg-white pt-5 pb-2">
       <h2 class="text-center font-bold text-2xl">Афіши</h2>
 
-      <!-- Слайдер -->
       <div class="relative w-full pt-5 pb-8 max-w-4xl mx-auto overflow-hidden" @touchstart="onTouchStart"
         @touchend="onTouchEnd" @mousedown="onMouseDown" @mouseup="onMouseUp">
         <div class="flex transition-transform duration-700 ease-in-out"
@@ -141,7 +142,6 @@ export default {
           </div>
         </div>
 
-        <!-- Кнопки -->
         <button
           class="absolute top-1/2 left-0 -translate-y-1/2 w-12 h-12 bg-black/30 text-white flex items-center justify-center rounded-full ml-2"
           @click="prevSlide">
@@ -153,7 +153,6 @@ export default {
           ›
         </button>
 
-        <!-- Смуги прогресу (карусель) -->
         <div class="absolute bottom-0 left-0 w-full flex justify-center items-center gap-2 px-2 mb-2">
           <div v-for="(item, i) in afisha" :key="i"
             class="transition-all duration-500 rounded bg-gray-300 overflow-hidden"
@@ -168,7 +167,7 @@ export default {
           Переглянути всі афіши
         </button>
       </div>
-    </div>
+    </div> -->
 
     <!-- Про театр -->
     <ParallaxSection image="./img/background/dram-theater.jpg" speed="0.3">
