@@ -14,9 +14,10 @@ export default {
 <template>
   <div class="flex flex-col min-h-screen">
     <Header />
-    <RouterView class="flex-1" />
+    <RouterView class="mt-16 flex-1" />
     <Footer />
   </div>
+  
 </template>
 
 <style scoped>

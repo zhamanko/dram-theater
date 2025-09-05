@@ -28,13 +28,13 @@ export default {
                 {
                     title: "Вистава «Неаполь – місто мільйонерів»",
                     description: "Театральна магія в дії! Тексти драматурга Едуардо де Філіппо оживають на сцені Закарпатського музично-драматичного театру...",
-                    photo: "./img/news/pro-premjeru-tihe-vushko-3.jpg",
+                    photo: "./img/news/pidgotovka-vustavi-neapol.jpg",
                     date: "Пт, 14 липня 2025",
                 },
                 {
                     title: "Театр просто неба: «Жменяки» в Ужгородському скансені",
                     description: "У День Міста Ужгород, 13.09.2025р., в Ужгородському скансені просто неба відбудеться легендарна вистава «Жменяки» — візитівка Закарпатського облмуздрамтеатру...",
-                    photo: "./img/news/pro-premjeru-tihe-vushko-3.jpg",
+                    photo: "./img/news/zhmenjaki-skansen-uzhgorod.jpg",
                     date: "Вт, 10 липня 2025",
                 },
 
@@ -47,13 +47,13 @@ export default {
                 {
                     title: "Вистава «Неаполь – місто мільйонерів»",
                     description: "Театральна магія в дії! Тексти драматурга Едуардо де Філіппо оживають на сцені Закарпатського музично-драматичного театру...",
-                    photo: "./img/news/pro-premjeru-tihe-vushko-3.jpg",
+                    photo: "./img/news/pidgotovka-vustavi-neapol.jpg",
                     date: "Пт, 14 липня 2025",
                 },
                 {
                     title: "Театр просто неба: «Жменяки» в Ужгородському скансені",
                     description: "У День Міста Ужгород, 13.09.2025р., в Ужгородському скансені просто неба відбудеться легендарна вистава «Жменяки» — візитівка Закарпатського облмуздрамтеатру...",
-                    photo: "./img/news/pro-premjeru-tihe-vushko-3.jpg",
+                    photo: "./img/news/zhmenjaki-skansen-uzhgorod.jpg",
                     date: "Вт, 10 липня 2025",
                 },
             ],
@@ -76,7 +76,8 @@ export default {
         }" class="news-swiper">
             <SwiperSlide v-for="(item, index) in news" :key="index" class="pt-3 pb-10">
                 <div class="slide-inner">
-                    <NewsCard :title="item.title" :description="item.description" :photo="item.photo" :date="item.date" />
+                    <NewsCard :title="item.title" :description="item.description" :photo="item.photo"
+                        :date="item.date" />
                 </div>
             </SwiperSlide>
         </Swiper>
@@ -84,45 +85,41 @@ export default {
 </template>
 
 <style>
-.swiper-button-next,
-.swiper-button-prev {
-    color: #f12626;
-    transition: 0.3s;
-    font-size: 10px;
-}
-
-.swiper-pagination-bullet-active{
-    background: #7f1d1d;
+.swiper-pagination-bullet-active {
+    background: #7f1d1d !important;
 }
 
 /* додай у свій <style> */
 .news-swiper .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: visible; /* щоб збільшений слайд не обрізався */
-  pointer-events: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    /* щоб збільшений слайд не обрізався */
+    pointer-events: auto;
 }
 
 /* Масштаб робимо на внутрішньому елементі, бо Swiper додає translate3d inline */
 .slide-inner {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  transform: scale(0.90);              /* базовий, трохи менший */
-  transition: transform 450ms cubic-bezier(.22,.9,.38,1);
-  transform-origin: center center;
-  will-change: transform;
+    transform: scale(0.90);
+    /* базовий, трохи менший */
+    transition: all;
+    transform-origin: center center;
+    will-change: transform;
 }
 
 /* Центровий (активний) слайд */
 .news-swiper .swiper-slide-active .slide-inner,
 .news-swiper .swiper-slide-duplicate-active .slide-inner {
-  transform: scale(1);    /* наприклад 1 або 1.05-1.15 */
-  z-index: 30;
+    transform: scale(1);
+    /* наприклад 1 або 1.05-1.15 */
+    z-index: 30;
 }
 
 /* Сусідні слайди трохи більші */
@@ -130,17 +127,7 @@ export default {
 .news-swiper .swiper-slide-prev .slide-inner,
 .news-swiper .swiper-slide-duplicate-next .slide-inner,
 .news-swiper .swiper-slide-duplicate-prev .slide-inner {
-  transform: scale(0.90);
-  z-index: 20;
-}
-
-/* При потребі — зроби сильніший ефект, але обережно з 1.5 */
-
-
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-    color: #7f1d1d;
-    transform: scale(1.2);
+    transform: scale(0.90);
+    z-index: 20;
 }
 </style>
