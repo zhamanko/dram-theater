@@ -14,7 +14,7 @@ export default {
 <template>
   <div class="flex flex-col min-h-screen">
     <Header />
-    <RouterView class="mt-16 flex-1" />
+    <RouterView class="mt-16 lg:mt-22 flex-1" />
     <Footer />
   </div>
   

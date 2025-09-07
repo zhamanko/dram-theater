@@ -42,10 +42,20 @@ export default {
 </script>
 
 <template>
-    <header class="bg-white border-b w-full h-16 fixed top-0 z-10 border-gray-200">
-        <div class="flex justify-between h-full items-center p-2">
+    <header class="bg-white border-b w-full h-16 lg:h-22 fixed top-0 z-10 border-gray-200">
+        <div class="flex justify-between xl:justify-around h-full items-center p-2">
             <img class="h-full " src="@/assets/logo.png" alt="logo">
-            <button @click="toggleMenu" v-if="!menuOpen">
+            <div class="hidden xl:flex flex-row items-center justify-center gap-6 text-xl">
+                <RouterLink @click="closeMenu" to="/" class="hover:scale-105 transition">Головна</RouterLink>
+                <RouterLink @click="closeMenu" to="/afisha" class="hover:scale-105 transition">Афіши</RouterLink>
+                <RouterLink @click="closeMenu" to="/news" class="hover:scale-105 transition">Новини</RouterLink>
+                <RouterLink @click="closeMenu" to="/actors" class="hover:scale-105 transition">Репертуар</RouterLink>
+                <RouterLink @click="closeMenu" to="/about" class="hover:scale-105 transition">Про театр</RouterLink>
+                <RouterLink @click="closeMenu" to="/admin" class="hover:scale-105 transition">Адміністрація</RouterLink>
+                <RouterLink @click="closeMenu" to="/troupe" class="hover:scale-105 transition">Трупа</RouterLink>
+                <RouterLink @click="closeMenu" to="/contacts" class="hover:scale-105 transition">Контакти</RouterLink>
+            </div>
+            <button class="xl:hidden" @click="toggleMenu" v-if="!menuOpen">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="size-7">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -65,7 +75,7 @@ export default {
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                     </svg>
                 </button>
-                <div class="flex flex-col items-center mt-5 space-y-4 text-lg">
+                <div class="flex flex-col items-center mt-5 space-y-4 text-lg md:text-2xl">
                     <RouterLink @click="closeMenu" to="/">Головна</RouterLink>
                     <RouterLink @click="closeMenu" to="/afisha">Афіши</RouterLink>
                     <RouterLink @click="closeMenu" to="/news">Новини</RouterLink>
