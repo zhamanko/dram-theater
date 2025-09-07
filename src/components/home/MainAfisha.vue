@@ -50,7 +50,7 @@ export default {
   <Swiper :modules="modules" :pagination="{
     clickable: true,
     dynamicBullets: true,
-  }" :navigation="true" :autoplay="{ delay: 3000, disableOnInteraction: false }" class="h-180 w-auto sm:h-196 lg:h-198">
+  }" :navigation="true" :speed="800" :autoplay="{ delay: 3000, disableOnInteraction: false }" class="h-180 w-auto sm:h-196 lg:h-198">
     <SwiperSlide v-for="(item, index) in afishaItems" :key="index" class="relative h-full w-full">
       <!-- Фото завжди на фоні, розтягнуте -->
       <div class="relative w-full h-full overflow-hidden">
