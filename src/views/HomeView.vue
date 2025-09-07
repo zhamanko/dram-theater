@@ -32,14 +32,20 @@ export default {
       <ParallaxSection image="./img/background/dram-theater.jpg" speed="0.3">
         <div class="py-20 px-10">
           <h2 class="text-2xl font-bold mb-5">Про театр</h2>
-          <p class="text-justify">
-            Історія Закарпатського обласного державного українського музично-драматичного театру – це насамперед славна
-            сторінка становлення нації, сторінка самопожертви та відданості ідеї творення українського театру на
-            Закарпатті.
-          </p>
-          <button class="bg-red-800 py-2 px-4 rounded-lg hover:bg-red-700 transition text-white mt-4">
-            Дізнатися більше
-          </button>
+          <div class="flex flex-row gap-5 justify-around">
+            <img class="hidden lg:block rounded-xl" src="https://www.dramteatr.uz.ua/images/teatr2.jpg" alt="theater">
+            <div class="flex flex-col justify-center lg:w-1/2">
+              <p class="text-justify">
+                Історія Закарпатського обласного державного українського музично-драматичного театру – це насамперед
+                славна
+                сторінка становлення нації, сторінка самопожертви та відданості ідеї творення українського театру на
+                Закарпатті.
+              </p>
+              <button class="bg-red-800 py-2 px-4 rounded-lg hover:bg-red-700 transition text-white mt-4">
+                Дізнатися більше
+              </button>
+            </div>
+          </div>
         </div>
       </ParallaxSection>
     </LazyLoad>
@@ -60,8 +66,8 @@ export default {
 
       <h2 class="text-2xl font-bold text-center">Звʼязатись з нами</h2>
 
-      <div class="flex flex-col gap-8 mt-5">
-        <form action="">
+      <div class="flex flex-col justify-center items-center gap-8 mt-5">
+        <form class="w-4/5 xl:w-1/2">
           <div>
             <label for="">Імʼя:</label>
             <input class="border border-gray-300 rounded px-2 py-1 w-full" type="text" />
@@ -83,7 +89,7 @@ export default {
     </div>
 
     <!-- Приєднуйтесь до нас у соцмережах: -->
-     
+
     <ParallaxSection image="./img/background/social.jpg" speed="0.2" opacity="60">
       <div class="p-10">
         <h2 class="text-2xl font-bold">Приєднуйтесь до нас</h2>
