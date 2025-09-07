@@ -42,10 +42,10 @@ export default {
 </script>
 
 <template>
-    <header class="bg-white border-b w-full h-16 lg:h-22 fixed top-0 z-10 border-gray-200">
+    <header class="bg-white border-b w-full h-16 lg:h-22 fixed top-0 z-10 shadow-xl border-gray-200">
         <div class="flex justify-between xl:justify-around h-full items-center p-2">
             <img class="h-full " src="@/assets/logo.png" alt="logo">
-            <div class="hidden xl:flex flex-row items-center justify-center gap-6 text-xl">
+            <div class="hidden xl:flex flex-row items-center justify-center gap-6 xl:text-lg 2xl:text-xl">
                 <RouterLink @click="closeMenu" to="/" class="hover:scale-105 transition">Головна</RouterLink>
                 <RouterLink @click="closeMenu" to="/afisha" class="hover:scale-105 transition">Афіши</RouterLink>
                 <RouterLink @click="closeMenu" to="/news" class="hover:scale-105 transition">Новини</RouterLink>

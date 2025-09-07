@@ -6,6 +6,7 @@ import News from '@/components/home/News.vue';
 import Afishas from '@/components/home/Afishas.vue';
 
 import ParallaxSection from '@/components/home/ParallaxSection.vue';
+import LazyLoad from '@/components/LazyLoad.vue';
 
 
 export default {
@@ -22,29 +23,36 @@ export default {
     </div>
 
     <!-- Афіши -->
-     <Afishas />
+    <LazyLoad>
+      <Afishas />
+    </LazyLoad>
 
-    <!-- Про театр -->
-    <ParallaxSection image="./img/background/dram-theater.jpg" speed="0.3">
-      <div class="py-20 px-10">
-        <h2 class="text-2xl font-bold mb-5">Про театр</h2>
-        <p class="text-justify">
-          Історія Закарпатського обласного державного українського музично-драматичного театру – це насамперед славна
-          сторінка становлення нації, сторінка самопожертви та відданості ідеї творення українського театру на
-          Закарпатті.
-        </p>
-        <button class="bg-red-800 py-2 px-4 rounded-lg hover:bg-red-700 transition text-white mt-4">
-          Дізнатися більше
-        </button>
-      </div>
-    </ParallaxSection>
-
+    <LazyLoad>
+      <!-- Про театр -->
+      <ParallaxSection image="./img/background/dram-theater.jpg" speed="0.3">
+        <div class="py-20 px-10">
+          <h2 class="text-2xl font-bold mb-5">Про театр</h2>
+          <p class="text-justify">
+            Історія Закарпатського обласного державного українського музично-драматичного театру – це насамперед славна
+            сторінка становлення нації, сторінка самопожертви та відданості ідеї творення українського театру на
+            Закарпатті.
+          </p>
+          <button class="bg-red-800 py-2 px-4 rounded-lg hover:bg-red-700 transition text-white mt-4">
+            Дізнатися більше
+          </button>
+        </div>
+      </ParallaxSection>
+    </LazyLoad>
 
     <!-- Новини -->
-    <News />
+    <LazyLoad>
+      <News />
+    </LazyLoad>
 
     <!-- Партнери -->
-    <Partners />
+    <LazyLoad>
+      <Partners />
+    </LazyLoad>
 
 
     <!-- Контакти -->
@@ -75,6 +83,7 @@ export default {
     </div>
 
     <!-- Приєднуйтесь до нас у соцмережах: -->
+     
     <ParallaxSection image="./img/background/social.jpg" speed="0.2" opacity="60">
       <div class="p-10">
         <h2 class="text-2xl font-bold">Приєднуйтесь до нас</h2>
