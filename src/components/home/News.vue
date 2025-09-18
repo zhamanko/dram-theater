@@ -1,5 +1,5 @@
 <script>
-import NewsCard from '@/components/home/NewsCard.vue';
+import NewsCard from '@/components/NewsCard.vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/autoplay';

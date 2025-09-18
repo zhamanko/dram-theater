@@ -1,5 +1,5 @@
 <script>
-import AfishaCard from './AfishaCard.vue';
+import AfishaCard from '../AfishaCard.vue';
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
@@ -15,12 +15,13 @@ export default {
     data() {
         return {
             afisha: [
-                { title: 'Кайдашева сімʼя', description: 'Класика української літератури оживає на сцені...', date: '25 липня', photo: './img/afisha/kajdasheva-simja.jpg' },
-                { title: 'Емігранти', description: '«Приречені» — це трагічна історія про жінок...', date: '27 липня', photo: './img/afisha/emigrantu.jpg' },
-                { title: 'Приречені', description: 'В основі – п’єса одного з найвідоміших польських письменників...', date: '30 липня', photo: './img/afisha/prirecheni-m.jpg' },
-                { title: 'Кайдашева сімʼя', description: 'Класика української літератури оживає на сцені...', date: '25 липня', photo: './img/afisha/kajdasheva-simja.jpg' },
-                { title: 'Емігранти', description: '«Приречені» — це трагічна історія про жінок...', date: '27 липня', photo: './img/afisha/emigrantu.jpg' },
-                { title: 'Приречені', description: 'В основі – п’єса одного з найвідоміших польських письменників...', date: '30 липня', photo: './img/afisha/prirecheni-m.jpg' },
+                { title: 'Кайдашева сімʼя', description: 'Класика української літератури оживає на сцені...', scene: 'Велика сцена', date: 'Пт, 25 липня', photo: './img/afisha/kajdasheva-simja.jpg' },
+                { title: 'Емігранти', description: '«Приречені» — це трагічна історія про жінок...', scene: 'Велика сцена', date: 'Нд, 27 липня', photo: './img/afisha/emigrantu.jpg' },
+                { title: 'Приречені', description: 'В основі – п’єса одного з найвідоміших польських письменників...', scene: 'Мала сцена', date: 'Ср, 30 липня', photo: './img/afisha/prirecheni-m.jpg' },
+                { title: 'Кайдашева сімʼя', description: 'Класика української літератури оживає на сцені...', scene: 'Велика сцена', date: 'Пт, 25 липня', photo: './img/afisha/kajdasheva-simja.jpg' },
+                { title: 'Емігранти', description: '«Приречені» — це трагічна історія про жінок...', scene: 'Мала сцена', date: 'Нд, 27 липня', photo: './img/afisha/emigrantu.jpg' },
+                { title: 'Приречені', description: 'В основі – п’єса одного з найвідоміших польських письменників...', scene: 'Велика сцена', date: 'Ср, 30 липня', photo: './img/afisha/prirecheni-m.jpg' },
+                { title: 'Приречені', description: 'В основі – п’єса одного з найвідоміших польських письменників...', scene: 'Велика сцена', date: 'Ср, 30 липня', photo: './img/afisha/prirecheni-m.jpg' },
             ],
             currentIndex: 0,
             progress: 0, // %

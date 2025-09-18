@@ -1,6 +1,6 @@
 <script>
 import MainAfisha from '@/components/home/MainAfisha.vue';
-import AfishaCard from '@/components/home/AfishaCard.vue';
+import AfishaCard from '@/components/AfishaCard.vue';
 import Partners from '@/components/home/Partners.vue';
 import News from '@/components/home/News.vue';
 import Afishas from '@/components/home/Afishas.vue';

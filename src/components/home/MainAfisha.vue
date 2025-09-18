@@ -77,7 +77,7 @@ export default {
             <p>{{ item.date }}</p>
             <button class="bg-red-800 py-2 px-4 rounded-lg hover:bg-red-700 transition text-white 
             xl:w-full xl:mt-5">
-              Квитки
+              Купити
             </button>
           </div>
         </div>

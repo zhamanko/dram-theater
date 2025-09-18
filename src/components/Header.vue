@@ -42,7 +42,7 @@ export default {
 </script>
 
 <template>
-    <header class="bg-white border-b w-full h-16 lg:h-22 fixed top-0 z-10 shadow-xl border-gray-200">
+    <header class="bg-white border-b w-full h-16 lg:h-22 fixed top-0 z-10 shadow-lg border-gray-200">
         <div class="flex justify-between xl:justify-around h-full items-center p-2">
             <img class="h-full " src="@/assets/logo.png" alt="logo">
             <div class="hidden xl:flex flex-row items-center justify-center gap-6 xl:text-lg 2xl:text-xl">
