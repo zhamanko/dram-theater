@@ -49,7 +49,7 @@ export default {
                 <RouterLink @click="closeMenu" to="/" class="hover:scale-105 transition">Головна</RouterLink>
                 <RouterLink @click="closeMenu" to="/afisha" class="hover:scale-105 transition">Афіши</RouterLink>
                 <RouterLink @click="closeMenu" to="/news" class="hover:scale-105 transition">Новини</RouterLink>
-                <RouterLink @click="closeMenu" to="/actors" class="hover:scale-105 transition">Репертуар</RouterLink>
+                <RouterLink @click="closeMenu" to="/repertoire" class="hover:scale-105 transition">Репертуар</RouterLink>
                 <RouterLink @click="closeMenu" to="/about" class="hover:scale-105 transition">Про театр</RouterLink>
                 <RouterLink @click="closeMenu" to="/admin" class="hover:scale-105 transition">Адміністрація</RouterLink>
                 <RouterLink @click="closeMenu" to="/troupe" class="hover:scale-105 transition">Трупа</RouterLink>
@@ -79,7 +79,7 @@ export default {
                     <RouterLink @click="closeMenu" to="/">Головна</RouterLink>
                     <RouterLink @click="closeMenu" to="/afisha">Афіши</RouterLink>
                     <RouterLink @click="closeMenu" to="/news">Новини</RouterLink>
-                    <RouterLink @click="closeMenu" to="/actors">Репертуар</RouterLink>
+                    <RouterLink @click="closeMenu" to="/repertoire">Репертуар</RouterLink>
                     <RouterLink @click="closeMenu" to="/about">Про театр</RouterLink>
                     <RouterLink @click="closeMenu" to="/admin">Адміністрація</RouterLink>
                     <RouterLink @click="closeMenu" to="/troupe">Трупа</RouterLink>

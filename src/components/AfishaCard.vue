@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-    <div id="item" class="relative w-80 bg-white shadow-lg rounded-xl overflow-hidden duration-300 group">
+    <div id="item" class="relative min-w-70 max-w-80 bg-white shadow-lg rounded-xl overflow-hidden duration-300 group">
         <!-- Фото -->
         <img class="w-full object-cover rounded-xl" :src="photo" :alt="title">
 
