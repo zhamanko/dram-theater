@@ -5,7 +5,7 @@ import Partners from '@/components/home/Partners.vue';
 import News from '@/components/home/News.vue';
 import Afishas from '@/components/home/Afishas.vue';
 
-import ParallaxSection from '@/components/home/ParallaxSection.vue';
+import ParallaxSection from '@/components/ParallaxSection.vue';
 import LazyLoad from '@/components/LazyLoad.vue';
 
 
