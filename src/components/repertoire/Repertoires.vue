@@ -20,7 +20,7 @@ export default {
 </script>
 
 <template>
-    <div class="w-full flex flex-col gap-5">
+    <div class="w-full grid md:grid-cols-2 justify-center lg:grid-cols-1 gap-5">
         <RepertoireCard v-for="(item, index) in repertoire" :key="index" v-bind="item" />
     </div>
 </template>

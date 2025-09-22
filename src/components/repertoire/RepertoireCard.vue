@@ -15,14 +15,17 @@ export default {
 </script>
 
 <template>
-    <div class="border w-full rounded-lg shadow-lg">
+    <div class="border border-gray-200 lg:w-full rounded-lg shadow-lg lg:flex">
         <div>
-            <img :src="photo" alt="">
+            <img :src="photo" alt="" class="w-full object-cover lg:w-120 rounded-t-lg lg:rounded-none lg:rounded-l-lg">
         </div>
-        <div class="p-2">
-            <h1 class="font-bold text-lg">{{ title }}</h1>
-            <p>{{ description }}</p>
-            <p>Дата премєри: <span>{{ date }}</span></p>
+        <div class="px-4 py-4 lg:py-12 gap-4 flex flex-col justify-between w-full">
+            <h1 class="font-bold text-3xl">{{ title }}</h1>
+            <p class="text-xl">{{ description }}</p>
+            <button class="bg-red-800 py-2 px-4 w-full rounded-lg hover:bg-red-700 transition text-white">
+                Про виставу
+            </button>
+            <p class="text-end">Дата премєри: <span>{{ date }}</span></p>
         </div>
     </div>
 </template>
