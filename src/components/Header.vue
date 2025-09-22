@@ -80,7 +80,7 @@ export default {
                     <RouterLink @click="closeMenu" to="/afisha">Афіши</RouterLink>
                     <RouterLink @click="closeMenu" to="/news">Новини</RouterLink>
                     <RouterLink @click="closeMenu" to="/repertoire">Репертуар</RouterLink>
-                    <RouterLink @click="closeMenu" to="/about">Про театр</RouterLink>
+                    <RouterLink @click="closeMenu" to="/about">Історія</RouterLink>
                     <RouterLink @click="closeMenu" to="/admin">Адміністрація</RouterLink>
                     <RouterLink @click="closeMenu" to="/troupe">Трупа</RouterLink>
                     <RouterLink @click="closeMenu" to="/contacts">Контакти</RouterLink>

@@ -1,111 +1,146 @@
 <script>
-import ParallaxSection from '@/components/ParallaxSection.vue';
+import ParallaxSection from '@/components/ParallaxSection.vue'
+import ParallaxQuote from '@/components/ParallaxQuote.vue'
 
 export default {
-  components: { ParallaxSection },
-  data() {
-    return {
-      parallaxOffset: 0
-    }
-  },
-  methods: {
-    handleScroll() {
-      if (!this.$refs.parallaxBox) return
-
-      const rect = this.$refs.parallaxBox.getBoundingClientRect()
-      const windowHeight = window.innerHeight
-
-      // висота блоку
-      const elementHeight = rect.height
-
-      // скільки елемент зайшов у вікно (0 = ще не видно, 1 = повністю видно)
-      let progress = (windowHeight - rect.top) / (windowHeight + elementHeight)
-
-      // обмежуємо від 0 до 1
-      progress = Math.min(Math.max(progress, 0), 1)
-
-      // тепер рухаємо текст тільки в межах блоку
-      this.parallaxOffset = progress * 100 // можна міняти 100 -> більше/менше
-    }
-  },
-  mounted() {
-    window.addEventListener("scroll", this.handleScroll)
-    this.handleScroll()
-  },
-  beforeUnmount() { // Vue 3
-    window.removeEventListener("scroll", this.handleScroll)
-  },
-  beforeDestroy() { // Vue 2
-    window.removeEventListener("scroll", this.handleScroll)
-  }
+  components: { ParallaxSection, ParallaxQuote }
 }
 </script>
 
 <template>
   <main class="relative overflow-hidden">
-    <ParallaxSection image="./img/background/AboutBackground.jpg" speed="0.3" opacity="30" class="h-100 mb-12">
+
+    <!-- Заголовок -->
+    <ParallaxSection image="./img/background/AboutBackground.jpg" speed="0.3" opacity="30" class="h-100 mb-5">
       <div class="flex justify-center items-center h-100">
-        <h1 class="text-3xl">Історія</h1>
+        <h1 class="text-3xl">Історія театру</h1>
       </div>
     </ParallaxSection>
-    <div class="flex flex-col lg:flex-row-reverse gap-5 px-20 pb-20">
-      <div class="lg:px-15 flex flex-col justify-center">
-        <h2 class="text-xl text-center">Lorem ipsum dolor sit</h2>
-        <p class="text-justify py-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt doloribus
-          obcaecati
-          delectus consequuntur soluta, praesentium,
-          laudantium porro iusto qui cumque quaerat rerum dignissimos veniam sed quibusdam beatae deserunt cupiditate
-          ratione?</p>
-        <p class="text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt doloribus obcaecati
-          delectus consequuntur soluta, praesentium,
-          laudantium porro iusto qui cumque quaerat rerum dignissimos veniam sed quibusdam beatae deserunt cupiditate
-          ratione?</p>
-      </div>
-    </div>
-    <div class="flex flex-col lg:flex-row-reverse gap-5 px-20">
-      <div class="lg:px-15 flex flex-col justify-center">
-        <h2 class="text-xl text-center">Lorem ipsum dolor sit</h2>
-        <p class="text-justify py-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt doloribus
-          obcaecati
-          delectus consequuntur soluta, praesentium,
-          laudantium porro iusto qui cumque quaerat rerum dignissimos veniam sed quibusdam beatae deserunt cupiditate
-          ratione?</p>
-        <p class="text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt doloribus obcaecati
-          delectus consequuntur soluta, praesentium,
-          laudantium porro iusto qui cumque quaerat rerum dignissimos veniam sed quibusdam beatae deserunt cupiditate
-          ratione?</p>
-      </div>
-      <img src="/img/about/One.jpg" alt="" class="lg:w-1/2 xl:w-2/5 rounded-lg shadow-lg" />
-    </div>
 
-    <div ref="parallaxBox" class="border-y border-gray-300 bg-[#f6f6f6] p-12 my-12 overflow-hidden">
-      <p class="text-2xl transform transition-transform duration-75"
-        :style="{ transform: `translateY(${parallaxOffset * 0.3}px)` }">
-        "Завдання театру — не залишати людину порожньою"
+    <!-- Початок історії -->
+    <section class="px-20 py-12">
+      <p class="text-justify">
+        Історія Закарпатського обласного державного українського музично-драматичного театру – це насамперед
+        славна сторінка становлення нації, сторінка самопожертви та відданості ідеї творення українського театру
+        на Закарпатті.
       </p>
-      <span class="block mt-2 transition-transform duration-75"
-        :style="{ transform: `translateY(${parallaxOffset * 0.5}px)` }">
-        В'ячеслав Довженко
-      </span>
-    </div>
+      <p class="text-justify mt-4">
+        Згідно з постановою Ради Народних Комісарів Закарпатської України від 12 листопада 1945 року
+        з 1 січня 1946 року було створено «Закарпатський обласний український музично-драматичний театр»,
+        який 7 листопада 1946 року почав свою діяльність виставою «Під каштанами Праги» К. Симонова.
+      </p>
+    </section>
 
-    <div class="flex flex-col lg:flex-row gap-5 px-20">
-      <div class="lg:px-15 flex flex-col justify-center">
-        <h2 class="text-xl text-center">Lorem ipsum dolor sit</h2>
-        <p class="text-justify py-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt doloribus
-          obcaecati
-          delectus consequuntur soluta, praesentium,
-          laudantium porro iusto qui cumque quaerat rerum dignissimos veniam sed quibusdam beatae deserunt cupiditate
-          ratione?</p>
-        <p class="text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt doloribus obcaecati
-          delectus consequuntur soluta, praesentium,
-          laudantium porro iusto qui cumque quaerat rerum dignissimos veniam sed quibusdam beatae deserunt cupiditate
-          ratione?</p>
+    <!-- Паралакс цитата -->
+    <ParallaxQuote
+      text="Театр — найвища інстанція для вирішення життєвих питань."
+      author="Олександр Герцен"
+      align="text-end"
+    />
+
+    <!-- Репертуар -->
+    <section class="px-20 py-12 flex flex-col justify-around lg:flex-row gap-5">
+      <div class="lg:w-2/5 text-center">
+        <h2 class="text-xl mb-4">Класичні постановки</h2>
+        <p class="text-justify">
+          За понад сімдесят років творчої діяльності театр виніс на суд глядача сотні вистав за п’єсами
+          української та світової класики: «Наталка Полтавка» І. Котляревського, «Украдене щастя» І. Франка,
+          «Камінний господар» Лесі Українки, «Майська ніч», «Циганка Аза» М. Старицького, «Севільський цирульник»
+          Т’єра Бомарше, «Дванадцята ніч» У. Шекспіра та багато інших.
+        </p>
       </div>
-      <img src="/img/about/One.jpg" alt="" class="lg:w-1/2 xl:w-2/5 rounded-lg shadow-lg" />
-    </div>
+      <img src="https://picsum.photos/1200" alt="Репертуар театру"
+           class="lg:w-1/3 rounded-lg shadow-lg object-cover" />
+    </section>
+
+    <!-- Паралакс цитата -->
+    <ParallaxQuote
+      text="Завдання театру — не залишати людину порожньою."
+      author="В'ячеслав Довженко"
+    />
+
+    <!-- Закарпатські автори -->
+    <section class="px-20 py-12">
+      <h2 class="text-xl mb-4">Твори закарпатських авторів</h2>
+      <p class="text-justify">
+        Театр активно ставив п’єси закарпатських драматургів: «Верховино, світу ті наш» М. Тевельова,
+        «Жменяки» М. Томчанія, «Чаклунка синіх гір» В. Сичевського, «Микола Шугай» І. Стецюри,
+        «Голос великої ріки» Д. Кешелі, «Закарпатське весілля» В. Руснака та інші.
+      </p>
+    </section>
+
+    <!-- Паралакс цитата -->
+    <ParallaxQuote
+      text="Мистецтво театру живе доти, доки в ньому б’ється серце народу."
+      author="Невідомий"
+      align="text-end"
+    />
+
+    <!-- Режисери і художники -->
+    <section class="px-20 py-12 flex flex-col justify-around  lg:flex-row-reverse gap-5">
+      <div class="lg:w-2/5 text-center">
+        <h2 class="text-xl mb-4">Видатні режисери та художники</h2>
+        <p class="text-justify">
+          Серед режисерів, що працювали в театрі: Володимир Магар, Гнат Ігнанович, Григорій Воловик,
+          Станіслав Мойсеєв, брати Шерегії та багато інших.
+        </p>
+        <p class="text-justify mt-4">
+          Художнє оформлення вистав створювали такі майстри, як Федір Манайло, Андрій Коцка, Микола Манджуло,
+          Валентина Франківська, Ігор Панейко, Віра Степчук, Емма Зайцева.
+        </p>
+      </div>
+      <img src="https://picsum.photos/1200" alt="Режисери театру"
+           class="lg:w-1/3 rounded-lg shadow-lg object-cover" />
+    </section>
+
+    <!-- Паралакс цитата -->
+    <ParallaxQuote
+      text="Театр — це життя, піднесене на сцену."
+      author="Станіславський"
+    />
+
+    <!-- Актори -->
+    <section class="px-20 py-12">
+      <h2 class="text-xl mb-4">Акторський склад</h2>
+      <p class="text-justify">
+        За історію театру тут працювало багато знаних акторів: В. Бідяк, К. Маринченко, М. Пільцер,
+        М. Хмара, В. та Г. Левкулич, І. Чуєнко, Г. Ушенко та інші.
+      </p>
+      <p class="text-justify mt-4">
+        Сьогодні в театрі працюють народні та заслужені артисти України: Марія Харченко,
+        Анатолій Філіппов, Лариса Білак, Людмила Іванова, Мая Геляс та багато інших.
+      </p>
+    </section>
+
+    <!-- Гастролі -->
+    <section class="px-20 py-12 flex flex-col justify-around lg:flex-row gap-5">
+      <div class="lg:w-2/5 text-center">
+        <h2 class="text-xl mb-4">Гастролі</h2>
+        <p class="text-justify">
+          Географія гастрольних поїздок театру надзвичайно широка: вистави бачили глядачі Литви, Естонії,
+          Білорусі, Молдови, Казахстану, Чехословаччини, Румунії та багатьох міст Росії.
+        </p>
+      </div>
+      <img src="https://picsum.photos/1200" alt="Гастролі театру"
+           class="lg:w-1/3 rounded-lg shadow-lg object-cover" />
+    </section>
+
+    <!-- Сучасність -->
+    <ParallaxQuote
+      text="Традиції живуть доти, доки вони народжують нові сенси."
+      author="Сучасність"
+      align="text-end"
+    />
+
+    <section class="px-20 py-12">
+      <h2 class="text-xl mb-4">Сьогодні</h2>
+      <p class="text-justify">
+        Сьогодні творчий колектив Срібної Землі продовжує традиції українського музичного театру.
+        У репертуарі: «Танго для тебе» братів Шерегіїв, «Судний час» Івана Козака,
+        «Ханума» Г. Цегареллі, «Банкрот» за М. Старицьким, «Наталка Полтавка» І. Котляревського,
+        «По ревізії» М. Кропивницького та інші.
+      </p>
+    </section>
 
   </main>
 </template>
-
-<style></style>
