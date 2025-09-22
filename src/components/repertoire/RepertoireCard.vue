@@ -4,6 +4,7 @@ export default {
         title: String,
         photo: String,
         description: String,
+        status: String,
         date: String,
     },
     data() {
@@ -25,7 +26,11 @@ export default {
             <button class="bg-red-800 py-2 px-4 w-full rounded-lg hover:bg-red-700 transition text-white">
                 Про виставу
             </button>
-            <p class="text-end">Дата премєри: <span>{{ date }}</span></p>
+            <div class="flex justify-between">
+                <p
+                :class="status === 'Діюча' ? 'text-green-500' : 'text-red-700' ">{{ status }}</p>
+                <p>Дата премєри: <span>{{ date }}</span></p>
+            </div>
         </div>
     </div>
 </template>

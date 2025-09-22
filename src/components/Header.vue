@@ -50,7 +50,7 @@ export default {
                 <RouterLink @click="closeMenu" to="/afisha" class="hover:scale-105 transition">Афіши</RouterLink>
                 <RouterLink @click="closeMenu" to="/news" class="hover:scale-105 transition">Новини</RouterLink>
                 <RouterLink @click="closeMenu" to="/repertoire" class="hover:scale-105 transition">Репертуар</RouterLink>
-                <RouterLink @click="closeMenu" to="/about" class="hover:scale-105 transition">Про театр</RouterLink>
+                <RouterLink @click="closeMenu" to="/about" class="hover:scale-105 transition">Історія</RouterLink>
                 <RouterLink @click="closeMenu" to="/admin" class="hover:scale-105 transition">Адміністрація</RouterLink>
                 <RouterLink @click="closeMenu" to="/troupe" class="hover:scale-105 transition">Трупа</RouterLink>
                 <RouterLink @click="closeMenu" to="/contacts" class="hover:scale-105 transition">Контакти</RouterLink>
