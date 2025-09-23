@@ -3,6 +3,8 @@ import HomeView from '@/views/HomeView.vue'
 import AfishaView from '@/views/AfishaView.vue'
 import NewsView from '@/views/NewsView.vue'
 import RepertoireView from '@/views/RepertoireView.vue'
+import AboutView from '@/views/AboutView.vue'
+import LeadershipView from '@/views/LeadershipView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,7 +32,12 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      component: () => import('../views/AboutView.vue'),
+      component: AboutView,
+    },
+    {
+      path: '/leadership',
+      name: 'leadership',
+      component: LeadershipView,
     },
   ],
   scrollBehavior(to, from, savedPosition) {
