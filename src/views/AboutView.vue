@@ -39,7 +39,7 @@ export default {
     />
 
     <!-- Репертуар -->
-    <section class="px-20 py-12 flex flex-col justify-around lg:flex-row gap-5">
+    <section class="px-20 py-12 flex flex-col justify-around items-center lg:flex-row gap-5">
       <div class="lg:w-2/5 text-center">
         <h2 class="text-xl mb-4">Класичні постановки</h2>
         <p class="text-justify">
@@ -77,7 +77,7 @@ export default {
     />
 
     <!-- Режисери і художники -->
-    <section class="px-20 py-12 flex flex-col justify-around  lg:flex-row-reverse gap-5">
+    <section class="px-20 py-12 flex flex-col justify-around items-center lg:flex-row-reverse gap-5">
       <div class="lg:w-2/5 text-center">
         <h2 class="text-xl mb-4">Видатні режисери та художники</h2>
         <p class="text-justify">
@@ -113,7 +113,7 @@ export default {
     </section>
 
     <!-- Гастролі -->
-    <section class="px-20 py-12 flex flex-col justify-around lg:flex-row gap-5">
+    <section class="px-20 py-12 flex flex-col justify-around items-center lg:flex-row gap-5">
       <div class="lg:w-2/5 text-center">
         <h2 class="text-xl mb-4">Гастролі</h2>
         <p class="text-justify">
