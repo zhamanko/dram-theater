@@ -5,6 +5,7 @@ import NewsView from '@/views/NewsView.vue'
 import RepertoireView from '@/views/RepertoireView.vue'
 import AboutView from '@/views/AboutView.vue'
 import LeadershipView from '@/views/LeadershipView.vue'
+import ContactsView from '@/views/ContactsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,6 +39,11 @@ const router = createRouter({
       path: '/leadership',
       name: 'leadership',
       component: LeadershipView,
+    },
+    {
+      path: '/contacts',
+      name: 'contacts',
+      component: ContactsView,
     },
   ],
   scrollBehavior(to, from, savedPosition) {
